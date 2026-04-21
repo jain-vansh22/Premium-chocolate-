@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noir Luxe | Darkness, Perfected</title>
+    <meta name="description" content="Single-origin artisan chocolate, crafted for those who refuse to compromise.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Playfair+Display:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Import Map for Modules -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/",
+                "gsap": "https://unpkg.com/gsap@3.12.4/index.js",
+                "gsap/ScrollTrigger": "https://unpkg.com/gsap@3.12.4/ScrollTrigger.js"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- 1. Sticky Navigation -->
+    <nav id="navbar" class="hidden-on-scroll">
+        <div class="nav-container">
+            <div class="logo">Noir Luxe</div>
+            <ul class="nav-links">
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#craft">The Craft</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#shop" class="nav-cta">Shop</a></li>
+                <li><button id="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle Light/Dark Theme">☀️</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <header id="hero">
+        <video autoplay muted loop playsinline id="hero-bg-video">
+            <source src="images/Chocolate_unwrapping_exploding_202604041903.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-headline">Darkness, <br>Perfected.</h1>
+            <p class="hero-subheadline">Single-origin artisan chocolate, crafted for those who refuse to compromise.</p>
+            <div class="hero-actions">
+                <a href="#collection" class="btn btn-gold">Explore the Collection</a>
+                <a href="#craft" class="btn btn-ghost">Discover the Craft</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Brand Story Bar -->
+    <section id="story-bar">
+        <div class="story-line"></div>
+        <div class="story-text">Bean to Bar. Single Origin. Crafted in Belgium since 1987.</div>
+        <div class="story-line"></div>
+    </section>
+
+    <!-- 4. Signature Collection -->
+    <section id="collection" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Signature Collection</h2>
+            <div class="product-grid">
+                <!-- Products will be injected by main.js or hardcoded -->
+                <article class="product-card" data-tilt>
+                    <div class="product-image-container">
+                        <img src="images/obsidean.jpeg" alt="Obsidian 85%" loading="lazy">
+                        <div class="gloss"></div>
+                    </div>
+                    <div class="product-details">
+                        <h3>Obsidian 85%</h3>
+                        <p class="origin">Ecuador</p>
+                        <ul class="tasting-notes">
+                            <li>Smoked Cherry</li>
+                            <li>Black Pepper</li>
+                            <li>Dried Fig</li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="weight">100g</span>
+                            <span class="price">€18</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-tilt>
+                    <div class="product-image-container">
+                        <img src="images/velvet noir ghana.jpeg" alt="Velvet Noir 72%" loading="lazy">
+                        <div class="gloss"></div>
+                    </div>
+                    <div class="product-details">
+                        <h3>Velvet Noir 72%</h3>
+                        <p class="origin">Ghana</p>
+                        <ul class="tasting-notes">
+                            <li>Dark Berries</li>
+                            <li>Espresso</li>
+                            <li>Leather</li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="weight">100g</span>
+                            <span class="price">€15</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-tilt>
+                    <div class="product-image-container">
+                        <img src="images/sahara gold vietnam.jpeg" alt="Sahara Gold 45%" loading="lazy">
+                        <div class="gloss"></div>
+                    </div>
+                    <div class="product-details">
+                        <h3>Sahara Gold 45%</h3>
+                        <p class="origin">Vietnam</p>
+                        <ul class="tasting-notes">
+                            <li>Caramel</li>
+                            <li>Toasted Hazelnut</li>
+                            <li>Vanilla</li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="weight">100g</span>
+                            <span class="price">€14</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-tilt>
+                    <div class="product-image-container">
+                        <img src="images/ivory 34%.jpeg" alt="Ivory Ritual 34%" loading="lazy">
+                        <div class="gloss"></div>
+                    </div>
+                    <div class="product-details">
+                        <h3>Ivory Ritual 34%</h3>
+                        <p class="origin">Madagascar</p>
+                        <ul class="tasting-notes">
+                            <li>Coconut Cream</li>
+                            <li>Citrus Zest</li>
+                            <li>Jasmine</li>
+                        </ul>
+                        <div class="product-footer">
+                            <span class="weight">100g</span>
+                            <span class="price">€13</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. The Craft -->
+    <section id="craft" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">The Craft</h2>
+            <div class="timeline-container">
+                <div class="gold-line"></div>
+                <div class="timeline">
+                    <!-- Stage 1 -->
+                    <div class="timeline-stage left">
+                        <div class="stage-number">01</div>
+                        <div class="stage-content">
+                            <h3>Sourcing the Bean</h3>
+                            <p>Single-origin cacao from Ecuador, Ghana & Vietnam. Hand-selected for exceptional flavor
+                                profiles.</p>
+                        </div>
+                        <div class="stage-image">
+                            <img src="assets/images/tree.png" alt="Cacao Beans" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Stage 2 -->
+                    <div class="timeline-stage right">
+                        <div class="stage-number">02</div>
+                        <div class="stage-content">
+                            <h3>Fermentation & Drying</h3>
+                            <p>5–7 days of sun-drying. This crucial step develops the complex precursor flavors.</p>
+                        </div>
+                        <div class="stage-image">
+                            <img src="images/fermentation and drying.jpeg" alt="Drying Cacao" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Stage 3 -->
+                    <div class="timeline-stage left">
+                        <div class="stage-number">03</div>
+                        <div class="stage-content">
+                            <h3>Roasting</h3>
+                            <p>Slow-roasted at 140°C to bring out the depth and richness of the cocoa.</p>
+                        </div>
+                        <div class="stage-image">
+                            <img src="images/roasting.jpeg" alt="Roasting Beans" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Stage 4 -->
+                    <div class="timeline-stage right">
+                        <div class="stage-number">04</div>
+                        <div class="stage-content">
+                            <h3>Grinding & Conching</h3>
+                            <p>72-hour conch for an unbelievably silky texture that melts perfectly on the palate.</p>
+                        </div>
+                        <div class="stage-image">
+                            <img src="images/grinding and coanching.jpeg" alt="Grinding and Conching" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Stage 5 -->
+                    <div class="timeline-stage left">
+                        <div class="stage-number">05</div>
+                        <div class="stage-content">
+                            <h3>Tempering</h3>
+                            <p>Precise crystallization for the signature glossy finish and satisfying snap.</p>
+                        </div>
+                        <div class="stage-image">
+                            <img src="images/tempering.jpeg" alt="Tempering Chocolate" loading="lazy">
+                        </div>
+                    </div>
+                    <!-- Stage 6 -->
+                    <div class="timeline-stage right">
+                        <div class="stage-number">06</div>
+                        <div class="stage-content">
+                            <h3>Moulding & Finishing</h3>
+                            <p>Hand-finished and foil-wrapped to preserve freshness and ensure a premium unboxing
+                                experience.</p>
+                        </div>
+                        <div class="stage-image">
+                            <img src="images/moulding and finishing.jpeg" alt="Moulding and Finishing" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Cocoa Origins -->
+    <section id="origins" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Cocoa Origins</h2>
+            <div class="map-container">
+                <svg viewBox="0 0 1000 500" class="world-map">
+                    <!-- Base map path simplified for demo, or using an image overlay -->
+                    <image href="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
+                        class="map-bg" x="0" y="0" width="1000" height="500" preserveAspectRatio="xMidYMid slice"
+                        style="opacity: 0.15; filter: invert(1) brightness(0.5) sepia(1) hue-rotate(340deg);" />
+
+                    <!-- Pins -->
+                    <g class="pin" transform="translate(280, 260)">
+                        <circle cx="0" cy="0" r="4" class="pin-dot" />
+                        <circle cx="0" cy="0" r="12" class="pin-pulse" />
+                        <g class="pin-tooltip">
+                            <rect x="-75" y="-60" width="150" height="45" rx="4" />
+                            <text x="0" y="-40" class="tooltip-title">Ecuador</text>
+                            <text x="0" y="-25" class="tooltip-desc">Arriba Nacional · Floral & Nutty</text>
+                        </g>
+                    </g>
+
+                    <g class="pin" transform="translate(480, 270)">
+                        <circle cx="0" cy="0" r="4" class="pin-dot" />
+                        <circle cx="0" cy="0" r="12" class="pin-pulse" />
+                        <g class="pin-tooltip">
+                            <rect x="-75" y="-60" width="150" height="45" rx="4" />
+                            <text x="0" y="-40" class="tooltip-title">Ghana</text>
+                            <text x="0" y="-25" class="tooltip-desc">Forastero · Earthy & Deep</text>
+                        </g>
+                    </g>
+
+                    <g class="pin" transform="translate(560, 310)">
+                        <circle cx="0" cy="0" r="4" class="pin-dot" />
+                        <circle cx="0" cy="0" r="12" class="pin-pulse" />
+                        <g class="pin-tooltip">
+                            <rect x="-75" y="-60" width="150" height="45" rx="4" />
+                            <text x="0" y="-40" class="tooltip-title">Madagascar</text>
+                            <text x="0" y="-25" class="tooltip-desc">Criollo · Fruity & Zesty</text>
+                        </g>
+                    </g>
+
+                    <g class="pin" transform="translate(740, 265)">
+                        <circle cx="0" cy="0" r="4" class="pin-dot" />
+                        <circle cx="0" cy="0" r="12" class="pin-pulse" />
+                        <g class="pin-tooltip">
+                            <rect x="-75" y="-60" width="150" height="45" rx="4" />
+                            <text x="0" y="-40" class="tooltip-title">Vietnam</text>
+                            <text x="0" y="-25" class="tooltip-desc">Trinitario · Spicy & Caramel</text>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Testimonials -->
+    <section id="testimonials" class="section-padding">
+        <div class="container">
+            <div class="carousel">
+                <div class="carousel-track">
+                    <figure class="quote slide active">
+                        <div class="quote-mark">“</div>
+                        <blockquote>The Obsidian 85% is unlike anything I've tasted. It's art you can eat.</blockquote>
+                        <figcaption>Isabelle M., Paris</figcaption>
+                    </figure>
+                    <figure class="quote slide">
+                        <div class="quote-mark">“</div>
+                        <blockquote>Noir Luxe chocolates are the only gift I give clients. They speak for themselves.
+                        </blockquote>
+                        <figcaption>James T., London</figcaption>
+                    </figure>
+                    <figure class="quote slide">
+                        <div class="quote-mark">“</div>
+                        <blockquote>The depth of flavour in every single bar is extraordinary. Bean-to-bar perfection.
+                        </blockquote>
+                        <figcaption>Yuki S., Tokyo</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Final CTA Section -->
+    <section id="final-cta" class="section-padding">
+        <div class="cta-bg-texture"></div>
+        <div class="container text-center">
+            <h2 class="cta-headline">Experience the Ritual.</h2>
+            <p class="cta-subheadline">Order yours. Wrapped. Delivered. Unforgettable.</p>
+            <a href="#shop" class="btn btn-gold btn-large">Shop the Collection</a>
+        </div>
+    </section>
+
+    <!-- 9. Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">Noir Luxe</div>
+            <ul class="footer-links">
+                <li><a href="#collection">Collection</a></li>
+                <li><a href="#craft">The Craft</a></li>
+                <li><a href="#origins">Origins</a></li>
+                <li><a href="#terms">Terms</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="Pinterest">PT</a>
+                <a href="#" aria-label="TikTok">TK</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Noir Luxe. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Main Module -->
+    <script type="module">
+        import * as THREE from 'three';
+        import gsap from 'gsap';
+        import ScrollTrigger from 'gsap/ScrollTrigger';
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // --- Theme Toggle ---
+            const themeBtn = document.getElementById('theme-toggle');
+            if (themeBtn) {
+                themeBtn.addEventListener('click', () => {
+                    document.documentElement.classList.toggle('light-mode');
+                    const isLight = document.documentElement.classList.contains('light-mode');
+                    themeBtn.textContent = isLight ? '🌙' : '☀️';
+                    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+                });
+
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'light' || (!savedTheme && matchMedia('(prefers-color-scheme: light)').matches)) {
+                    document.documentElement.classList.add('light-mode');
+                    themeBtn.textContent = '🌙';
+                }
+            }
+
+            // --- 1. Sticky Navigation ---
+            const nav = document.getElementById('navbar');
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+
+                if (window.scrollY > lastScrollY && window.scrollY > 200) {
+                    nav.classList.add('hidden-on-scroll');
+                } else {
+                    nav.classList.remove('hidden-on-scroll');
+                }
+                lastScrollY = window.scrollY;
+            });
+
+            // --- 2. Hero Text Reveal ---
+            const heroTitle = document.querySelector('.hero-headline');
+            if (heroTitle) {
+                // Split text roughly by words
+                const words = heroTitle.innerHTML.split('<br>').map(line => {
+                    return line.split(' ').map(word => `<span class="word"><span>${word}</span></span>`).join(' ');
+                }).join('<br>');
+                heroTitle.innerHTML = words;
+
+                gsap.to('.hero-headline .word span', {
+                    y: '0%',
+                    duration: 1.5,
+                    ease: 'power4.out',
+                    stagger: 0.2,
+                    delay: 0.5
+                });
+
+                gsap.from('.hero-subheadline, .hero-actions', {
+                    opacity: 0,
+                    y: 20,
+                    duration: 1,
+                    delay: 1.5,
+                    ease: 'power3.out',
+                    stagger: 0.2
+                });
+            }
+
+
+
+            // --- 4. CSS 3D Tilt for Product Cards ---
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    const rotateX = ((y - centerY) / centerY) * -10;
+                    const rotateY = ((x - centerX) / centerX) * 10;
+
+                    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                    card.style.boxShadow = `0 20px 40px rgba(201, 168, 76, 0.1)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = `rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                    card.style.boxShadow = `none`;
+                });
+            });
+
+            // --- 5. The Craft Timeline Scroll Animation ---
+            const goldLine = document.querySelector('.gold-line');
+            if (goldLine) {
+                gsap.fromTo(goldLine,
+                    { scaleY: 0 },
+                    {
+                        scaleY: 1,
+                        ease: "none",
+                        scrollTrigger: {
+                            trigger: ".timeline-container",
+                            start: "top center",
+                            end: "bottom center",
+                            scrub: true
+                        }
+                    }
+                );
+            }
+
+            const stages = document.querySelectorAll('.timeline-stage');
+            stages.forEach((stage, index) => {
+                const isLeft = stage.classList.contains('left');
+                gsap.from(stage, {
+                    opacity: 0,
+                    x: isLeft ? -50 : 50,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: stage,
+                        start: "top 80%",
+                    }
+                });
+            });
+
+            // --- 6. Testimonials Carousel ---
+            const slides = document.querySelectorAll('.quote');
+            let currentSlide = 0;
+
+            if (slides.length > 0) {
+                setInterval(() => {
+                    slides[currentSlide].classList.remove('active');
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    slides[currentSlide].classList.add('active');
+                }, 5000);
+            }
+
+            // --- Generic Section Fade In ---
+            const sections = document.querySelectorAll('section');
+            sections.forEach(sec => {
+                gsap.from(sec, {
+                    opacity: 0,
+                    y: 30,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: sec,
+                        start: "top 85%",
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>
